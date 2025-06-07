@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      color: green;
+    }
+
+    input, button {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Exercise 1: Reverse a Number</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button onclick="handleReverse()">Reverse</button>
+    <p><strong>Output:</strong> <span id="reverseResult"></span></p>
+  </div>
+
+  <div class="section">
+    <h2>Exercise 2: Sort Letters in a String</h2>
+    <input type="text" id="stringInput" placeholder="Enter a string" />
+    <button onclick="handleSort()">Sort</button>
+    <p><strong>Output:</strong> <span id="sortResult"></span></p>
+  </div>
+
+  <script>
+    function reverseNumber(num) {
+      return parseInt(num.toString().split("").reverse().join(""), 10);
+    }
+
+    function sortStringAlphabetically(str) {
+      return str.split("").sort().join("");
+    }
+
+    function handleReverse() {
+      const input = document.getElementById("numberInput").value;
+      const result = reverseNumber(input);
+      document.getElementById("reverseResult").textContent = result;
+    }
+
+    function handleSort() {
+      const input = document.getElementById("stringInput").value;
+      const result = sortStringAlphabetically(input);
+      document.getElementById("sortResult").textContent = result;
+    }
+  </script>
+
+</body>
+</html>
